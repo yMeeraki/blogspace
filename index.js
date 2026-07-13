@@ -1,5 +1,5 @@
 const baseURL = "https://apis.scrimba.com/jsonplaceholder";
-const main = document.querySelector("main");
+const main = document.querySelector("#all-post-container");
 
 fetch(`${baseURL}/posts`, { method: "GET" })
   .then((response) => response.json())
