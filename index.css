@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Happy+Monkey&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=New+Rocker&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Yesteryear&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #53131e;
+  --secondary: #ef5b5b;
+  --accent: #20a39e;
+}
+
+body {
+  background: #fbf7f4;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+header {
+  height: 2em;
+  padding: 1em 2em;
+  position: fixed;
+}
+
+h1 {
+  font-family: "Audiowide", sans-serif;
+  color: var(--primary);
+  text-align: center;
+}
+
+main {
+  padding-top: 4em;
+}
+
