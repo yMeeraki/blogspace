@@ -25,10 +25,44 @@ header {
 h1 {
   font-family: "Audiowide", sans-serif;
   color: var(--primary);
-  text-align: center;
 }
 
 main {
   padding-top: 4em;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  padding: 2em;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: rgba(239, 91, 91, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+}
