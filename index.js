@@ -7,7 +7,7 @@ fetch(`${baseURL}/posts`, { method: "GET" })
     const postsArray = data.slice(0, 5);
     const allPosts = postsArray.forEach((post) => {
       main.innerHTML += `<div class="card">
-            <h3>${post.title}</h3>
+            <h2>${post.title}</h2>
             <p>${post.body}</p>
             <hr>
         </div>`;
