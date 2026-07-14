@@ -27,6 +27,7 @@ document.querySelector("#new-post").addEventListener("submit", function (e) {
   const title = document.getElementById("title").value;
   const body = document.getElementById("body").value;
   const data = postObject(title, body);
+  //  Send this off to the server!
   fetch(`${baseURL}/posts`, {
     method: "POST",
     body: JSON.stringify(data),
