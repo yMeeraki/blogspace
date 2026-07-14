@@ -118,7 +118,7 @@ textarea {
 }
 
 button {
-  padding: 0.4em 0.6em;
+  padding: 1em;
   background-color: var(--secondary);
   color: #fbf7f4;
   font-weight: 900;
