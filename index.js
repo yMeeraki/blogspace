@@ -29,10 +29,7 @@ document.querySelector("#new-post").addEventListener("submit", function (e) {
   const data = postObject(title, body);
   fetch(`${baseURL}/posts`, {
     method: "POST",
-    body: JSON.stringify({
-      title: data.title,
-      body: data.body,
-    }),
+    body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
     },
