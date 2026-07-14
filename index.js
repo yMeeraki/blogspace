@@ -10,13 +10,14 @@ fetch(`${baseURL}/posts`, { method: "GET" })
 // Show 5 posts
 function allPostDOM(data) {
   const postsArray = data.slice(0, 5);
-  const allPosts = postsArray.forEach((post) => {
-    main.innerHTML += `<div class="card">
-            <h2>${post.title}</h2>
-            <p>${post.body}</p>
-            <hr>
-        </div>`;
+
+  let html = "";
+
+  postsArray.forEach((post) => {
+    html += postDOM(post);
   });
+
+  main.innerHTML = html;
 }
 
 // Combine the title value and body value into an object
@@ -27,14 +28,17 @@ function postObject(title, body) {
   };
 }
 
-//  Update the DOM with the new blog entry
-function newPostDOM(data) {
-  main.innerHTML =
-    `<div class="card">
-            <h2>${data.title}</h2>
-            <p>${data.body}</p>
+//  the DOM for blog entry
+function postDOM(post) {
+  return `<div class="card">
+            <h2>${post.title}</h2>
+            <p>${post.body}</p>
             <hr>
-        </div>` + main.innerHTML;
+        </div>`;
+}
+
+function newPostDOM(post) {
+  main.innerHTML = postDOM(post) + main.innerHTML;
 }
 
 document.querySelector("#new-post").addEventListener("submit", function (e) {
@@ -51,5 +55,7 @@ document.querySelector("#new-post").addEventListener("submit", function (e) {
     },
   })
     .then((res) => res.json())
-    .then((data) => newPostDOM(data));
+    .then((data) => {
+      newPostDOM(data);
+    });
 });
