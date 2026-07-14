@@ -93,6 +93,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  background-color: rgba(239, 91, 91, 0.1);
 }
 
 .input-group {
