@@ -26,5 +26,15 @@ document.querySelector("#new-post").addEventListener("submit", function (e) {
   e.preventDefault();
   const title = document.getElementById("title").value;
   const body = document.getElementById("body").value;
-  console.log(postObject(title, body));
+  const data = postObject(title, body);
+  fetch(`${baseURL}/posts`, {
+    method: "POST",
+    body: JSON.stringify({
+      title: data.title,
+      body: data.body,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 });
