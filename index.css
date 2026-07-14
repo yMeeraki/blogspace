@@ -41,7 +41,7 @@ section {
   padding: 2em;
 }
 
-.card {
+.card,form {
   width: 100%;
   max-width: 800px;
   padding: 2em;
@@ -55,7 +55,7 @@ section {
     box-shadow 0.2s ease;
 }
 
-.card h2 {
+.card h2{
   color: var(--primary);
   text-decoration: underline;
   text-decoration-color: var(--secondary);
@@ -87,12 +87,29 @@ section {
   }
 }
 
-/* 
-Challenge: our form is hideous! Make it less hideous :P
+form{
+ display: flex;
+ flex-direction: column;
+ gap: 1em;
+}
 
-* Lay out the elements in a nicer way, maybe vertically. 
-  (CSS Grid or Flexbox should make this easy)
-* Add some background color to separate it from the posts
-* Style the button however you'd like.
-*/
+.input-group{
+ display: flex;
+ flex-direction: column;
+ gap: .5em;
+}
+
+.input-group > label{
+  font-size: 1.1em;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+input[type="text"], textarea{
+  padding: .4em .6em;
+  border-radius: .1em;
+  border: none;
+  border-bottom: 2px dashed var(--secondary);
+  background: none;
+}
 
