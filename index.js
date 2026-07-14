@@ -13,3 +13,18 @@ fetch(`${baseURL}/posts`, { method: "GET" })
         </div>`;
     });
   });
+
+// Combine the title value and body value into an object
+function postObject(title, body) {
+  return {
+    title,
+    body,
+  };
+}
+
+document.querySelector("#new-post").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const title = document.getElementById("title").value;
+  const body = document.getElementById("body").value;
+  console.log(postObject(title, body));
+});
