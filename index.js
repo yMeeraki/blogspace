@@ -56,5 +56,6 @@ document.querySelector("#new-post").addEventListener("submit", function (e) {
     .then((data) => {
       postsArray.unshift(data);
       allPostDOM(postsArray);
+      e.target.reset()
     });
 });
