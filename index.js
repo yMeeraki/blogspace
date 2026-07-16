@@ -4,16 +4,18 @@ const main = document.querySelector("#all-post-container");
 fetch(`${baseURL}/posts`, { method: "GET" })
   .then((response) => response.json())
   .then((data) => {
-    allPostDOM(data);
+    postsArray = data.slice(0, 5);
+
+    allPostDOM(postsArray);
   });
 
-// Show 5 posts
-function allPostDOM(data) {
-  const postsArray = data.slice(0, 5);
+let postsArray = [];
 
+// Show 5 posts
+function allPostDOM(posts) {
   let html = "";
 
-  postsArray.forEach((post) => {
+  posts.forEach((post) => {
     html += postDOM(post);
   });
 
@@ -37,10 +39,6 @@ function postDOM(post) {
         </div>`;
 }
 
-function newPostDOM(post) {
-  main.innerHTML = postDOM(post) + main.innerHTML;
-}
-
 document.querySelector("#new-post").addEventListener("submit", function (e) {
   e.preventDefault();
   const title = document.getElementById("title").value;
@@ -56,6 +54,7 @@ document.querySelector("#new-post").addEventListener("submit", function (e) {
   })
     .then((res) => res.json())
     .then((data) => {
-      newPostDOM(data);
+      postsArray.unshift(data);
+      allPostDOM(postsArray);
     });
 });
